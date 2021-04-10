@@ -19,7 +19,7 @@ public class Menu extends JPanel{
 	final JButton button_1;
 	final JButton button_2;
 	
-	//this.add(new JLabel("��ѡ��ģʽ"));
+	//this.add(new JLabel("请选择模式"));
 	public Menu() {
 		button_1 = new JButton("PVP");
 		button_1.addActionListener(e -> {

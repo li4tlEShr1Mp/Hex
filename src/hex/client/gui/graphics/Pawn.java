@@ -7,7 +7,7 @@ import hex.resources.Chessboard;
 import hex.resources.Pos;
 
 public class Pawn {
-	//³£Á¿£ºÆ«ÒÆÁ¿¡¢´óĞ¡¡¢×ø±êÆğÊ¼µã
+	//å¸¸é‡ï¼šåç§»é‡ã€å¤§å°ã€åæ ‡èµ·å§‹ç‚¹
 	public static final float size = 40f;
 	private static final float offsetX = ClientWindow.getWindowWidth() / 2.0f +size;
 	private static final float offsetY = ClientWindow.getWindowHeight() / 2.0f ;
@@ -16,22 +16,22 @@ public class Pawn {
 	private static final float[] Y = { 0.5f * size + offsetY, 0 + offsetY, 0.5f * size + offsetY, 1.5f * size + offsetY,
 			2 * size + offsetY, 1.5f * size + offsetY };
 	
-	//µ¥Æå×Ó¶¥µã×ø±ê
+	//å•æ£‹å­é¡¶ç‚¹åæ ‡
 	private final float[] x=new float[6];
 	private final float[] y=new float[6];
-	//Æå×ÓÑÕÉ«
+	//æ£‹å­é¢œè‰²
 	private  Color color=new Color(219,219,219);
 	Pawn(int row, int col) {
 		Pos pos = new Pos(row, col);
 		for (int i = 0; i < 6; i++) {
-			//µ¥Æå×Ó¶¥µã×ø±ê¼ÆËã
+			//å•æ£‹å­é¡¶ç‚¹åæ ‡è®¡ç®—
 			x[i] = X[i] + (pos.getCol() - (Chessboard.getSize() / 2) - 1) * size * 1.732f
 					+ (pos.getRow() - (Chessboard.getSize() / 2) - 1) *size*0.866f;
 			y[i] = Y[i] + (pos.getRow() - (Chessboard.getSize() / 2) - 1) * size * 1.5f;
 		}
 	}
 
-	//·µ»Øµ¥Æå×Ó¶¥µã×ø±ê
+	//è¿”å›å•æ£‹å­é¡¶ç‚¹åæ ‡
 	public float getXi(int i) {
 		return x[i];
 	}
@@ -42,7 +42,7 @@ public class Pawn {
 	public Color getColor() {
 		return color;
 	}
-	//ÉèÖÃÆå×ÓÑÕÉ«
+	//è®¾ç½®æ£‹å­é¢œè‰²
 	public void setColor(Color color) {
 		this.color=color;
 	}

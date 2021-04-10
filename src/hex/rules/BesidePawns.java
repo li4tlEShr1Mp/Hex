@@ -4,23 +4,23 @@ import hex.resources.Chessboard;
 import hex.resources.Pos;
 
 public class BesidePawns {
-	// Æå×ÓÓÅÏÈË³ĞòÅÅÁĞ
-	// ÖÕµã·½ÏòÓÅÏÈ
+	// æ£‹å­ä¼˜å…ˆé¡ºåºæ’åˆ—
+	// ç»ˆç‚¹æ–¹å‘ä¼˜å…ˆ
 	static final int[] dx = { 1, 1, 0, 0, -1, -1 }; // mutex=0 dx->row
 	static final int[] dy = { 0, -1, 1, -1, 0, 1 }; // mutex=1 dy->row
 
-	// Ñ¡È¡indexµãµÄÖÜÎ§ÓĞĞ§Æå×ÓÎ»ÖÃ
+	// é€‰å–indexç‚¹çš„å‘¨å›´æœ‰æ•ˆæ£‹å­ä½ç½®
 	public static Pos[] besidePos(boolean[][] searchVisited, Pos index) {
-		// ÖÜÎ§Æå×ÓÎ»ÖÃÊı×é
+		// å‘¨å›´æ£‹å­ä½ç½®æ•°ç»„
 		Pos[] positions = new Pos[6];
-		if (Chessboard.mutex == 0/* Player1ÓÅÏÈ·½Ïò */) {
+		if (Chessboard.mutex == 0/* Player1ä¼˜å…ˆæ–¹å‘ */) {
 			for (int n = 0; n < 6; n++) {
 				if (isLegal(searchVisited, index.getRow() + dx[n], index.getCol() + dy[n])) {
 					positions[n] = new Pos(index.getRow() + dx[n], index.getCol() + dy[n]);
-				} else//·ÇÓĞĞ§Æå×ÓÎ»ÖÃÖÃ¿Õ
+				} else//éæœ‰æ•ˆæ£‹å­ä½ç½®ç½®ç©º
 					positions[n] = null;
 			}
-		} else/* Player2ÓÅÏÈ·½Ïò(Player1 Player2ÑØÆåÅÌ¶Ô³Æ dx dy ¶Ôµ÷ ÓÅÏÈ·½Ïò¶Ôµ÷) */ {
+		} else/* Player2ä¼˜å…ˆæ–¹å‘(Player1 Player2æ²¿æ£‹ç›˜å¯¹ç§° dx dy å¯¹è°ƒ ä¼˜å…ˆæ–¹å‘å¯¹è°ƒ) */ {
 			for (int n = 0; n < 6; n++) {
 				if (isLegal(searchVisited, index.getRow() + dy[n], index.getCol() + dx[n])) {
 					positions[n] = new Pos(index.getRow() + dy[n], index.getCol() + dx[n]);
@@ -29,15 +29,15 @@ public class BesidePawns {
 			}
 		}
 		return positions;
-		// ·µ»ØÁÚ½Ó¿ÉÅĞ¶ÏÆå×ÓÎ»ÖÃ×é
+		// è¿”å›é‚»æ¥å¯åˆ¤æ–­æ£‹å­ä½ç½®ç»„
 	}
 
 	private static boolean isLegal(boolean[][] searchVisited, int pos1, int pos2) {
-		// ÅĞ¶ÏÁÚ½ÓÎ»ÖÃÊÇ·ñÄÉÈëÅĞ¶ÏÁ¬Í¨Êı×é
-		//ÊÇ·ñ·ÃÎÊ¹ı
-		return pos1 <= Chessboard.getSize() - 1 && pos2 <= Chessboard.getSize() - 1 && pos1 >= 0 && pos2 >= 0//ÆåÅÌ·¶Î§
-				&& Chessboard.isSeatTaken[pos1][pos2] != false //ÊÇ·ñ´æÔÚÆå×Ó
-				&& Chessboard.board[pos1][pos2] == Chessboard.mutex //ÊÇ·ñÎªÍ¬ÖÖÆå×Ó
+		// åˆ¤æ–­é‚»æ¥ä½ç½®æ˜¯å¦çº³å…¥åˆ¤æ–­è¿é€šæ•°ç»„
+		//æ˜¯å¦è®¿é—®è¿‡
+		return pos1 <= Chessboard.getSize() - 1 && pos2 <= Chessboard.getSize() - 1 && pos1 >= 0 && pos2 >= 0//æ£‹ç›˜èŒƒå›´
+				&& Chessboard.isSeatTaken[pos1][pos2] != false //æ˜¯å¦å­˜åœ¨æ£‹å­
+				&& Chessboard.board[pos1][pos2] == Chessboard.mutex //æ˜¯å¦ä¸ºåŒç§æ£‹å­
 				&& searchVisited[pos1][pos2] != true;
 	}
 }

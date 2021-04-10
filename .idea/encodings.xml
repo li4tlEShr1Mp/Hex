@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/hex/client/gui/ClientWindow.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/client/gui/MouseInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/client/gui/graphics/ColorMapping.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/hex/client/gui/graphics/HexBoard.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/hex/client/gui/graphics/Menu.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/client/gui/graphics/Pawn.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/client/gui/graphics/Winning.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/client/main/Game.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/resources/Chessboard.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/resources/Pos.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/rules/AIPawn.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/rules/BesidePawns.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/rules/IsWon.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/rules/test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/test/Combined.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/test/Dickhead.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/test/NewBranch.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/hex/test/Test.java" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

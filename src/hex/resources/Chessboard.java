@@ -1,22 +1,22 @@
 package hex.resources;
 
 public class Chessboard {
-	//ÆåÅÌÄ¬ÈÏ´óĞ¡11
+	//æ£‹ç›˜é»˜è®¤å¤§å°11
 	private static int size=11;
 	public static boolean isAI=false;
-	//Íæ¼ÒÂÖ»»»¥³âÁ¿ 
+	//ç©å®¶è½®æ¢äº’æ–¥é‡ 
 	//0->Player1
 	//1->Player2
 	static public int mutex=-1;
-	//¶şÎ¬Êı×éÊµÏÖÆåÅÌ
+	//äºŒç»´æ•°ç»„å®ç°æ£‹ç›˜
 	static public int[][] board =new int[size][size];
-	//ÊÇ·ñ´æÔÚÆå×Ó
+	//æ˜¯å¦å­˜åœ¨æ£‹å­
 	static public boolean[][] isSeatTaken =new boolean[size][size];
-	//ÆäËûÆåÅÌ´óĞ¡
+	//å…¶ä»–æ£‹ç›˜å¤§å°
 	public void setSize(int size){
 		Chessboard.size=size;
 	}
-	//»ñÈ¡ÆåÅÌ´óĞ¡
+	//è·å–æ£‹ç›˜å¤§å°
 	static public int getSize() {
 		return size;
 	}
@@ -25,4 +25,4 @@ public class Chessboard {
 		board=new int[size][size];
 	}
 }
-//ÆåÅÌ
+//æ£‹ç›˜

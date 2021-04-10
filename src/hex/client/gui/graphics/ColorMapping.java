@@ -1,35 +1,35 @@
 package hex.client.gui.graphics;
 
 import java.awt.Color;
-//É«²ÊÓ³Éä int->Color (RGB)
+//è‰²å½©æ˜ å°„ int->Color (RGB)
 public class ColorMapping {
 	public static Color mapColor(int mutex) {
 		if(mutex==0) {
-			return new Color(255, 68, 68);//ºìÉ«
-			//return new Color(240, 70, 70);//ºìÉ«
+			return new Color(255, 68, 68);//çº¢è‰²
+			//return new Color(240, 70, 70);//çº¢è‰²
 		}
 		else if(mutex==1) {
-			return new Color(45, 183, 255);//À¶É«
+			return new Color(45, 183, 255);//è“è‰²
 		}
-		else return new Color(219, 219, 219);//µ×É«
+		else return new Color(219, 219, 219);//åº•è‰²
 	}
-	//Ğü¸¡É«²ÊÓ³Éä
+	//æ‚¬æµ®è‰²å½©æ˜ å°„
 	public static Color mapHoverColor(int mutex) {
 		if(mutex==0) {
-			return new Color(234, 167, 167);//ºìÉ«
+			return new Color(234, 167, 167);//çº¢è‰²
 		}
 		else if(mutex==1) {
-			return new Color(151, 200, 224);//À¶É«
+			return new Color(151, 200, 224);//è“è‰²
 		}
-		else return new Color(219, 219, 219);//µ×É«
+		else return new Color(219, 219, 219);//åº•è‰²
 	}
 	public static String mapToString(int mutex) {
 		if(mutex==0) {
-			return "RED";//ºìÉ«
-			//return new Color(240, 70, 70);//ºìÉ«
+			return "RED";//çº¢è‰²
+			//return new Color(240, 70, 70);//çº¢è‰²
 		}
 		else if(mutex==1) {
-			return "BLUE";//À¶É«
+			return "BLUE";//è“è‰²
 		}
 		return "ERROR";
 	}

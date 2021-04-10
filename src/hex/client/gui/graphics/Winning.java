@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 import hex.client.gui.ClientWindow;
 import hex.resources.Chessboard;
-//胜利界面
+//鑳滃埄鐣岄潰
 public class Winning extends JPanel {
 	/**
 	 * 
@@ -37,7 +37,7 @@ public class Winning extends JPanel {
 			public void mousePressed(MouseEvent e) {
 			}
 
-			// 鼠标监听按下操作
+			// 榧犳爣鐩戝惉鎸変笅鎿嶄綔
 			public void mouseReleased(MouseEvent e) {
 				if (e.getX() > offsetX - imageSize / 2 && e.getX() < offsetX + imageSize / 2
 						&& e.getY() < offsetY + imageSize&&e.getY()>offsetY) {
@@ -74,7 +74,7 @@ public class Winning extends JPanel {
 		g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g2d.setColor(color);
 		int fontSize = 100;
-		g2d.setFont(new Font("等线", Font.BOLD, fontSize));
+		g2d.setFont(new Font("绛夌嚎", Font.BOLD, fontSize));
 		g2d.drawString(text, offsetX - fontSize * 5 / 2f, offsetY - fontSize);
 		g.drawImage(RESET, offsetX - imageSize / 2, offsetY, imageSize, imageSize, null);
 	}

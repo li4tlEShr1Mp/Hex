@@ -2,19 +2,19 @@ package hex.resources;
 public class Pos {
 	private int row;
 	private int col;
-	//¹¹Ôìº¯Êı
+	//æ„é€ å‡½æ•°
 	public Pos(int x,int y){
 		row=x;
 		col=y;
 	}
-	//ÉèÖÃĞĞÁĞºÅ
+	//è®¾ç½®è¡Œåˆ—å·
 	public void setRow(int x) {
 		row=x;
 	}
 	public void setCol(int y) {
 		col=y;
 	}
-	//»ñÈ¡ĞĞÁĞºÅ
+	//è·å–è¡Œåˆ—å·
 	public int getRow() {
 		return row;
 	}
@@ -22,4 +22,4 @@ public class Pos {
 		return col;
 	}
 }											
-//Î»ÖÃ
+//ä½ç½®

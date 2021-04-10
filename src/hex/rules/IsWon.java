@@ -4,48 +4,48 @@ import hex.client.gui.graphics.Winning;
 import hex.resources.Chessboard;
 import hex.resources.Pos;
 public class IsWon {
-	//µ¥±ßÆğÊ¼Öğµãµİ¹é²éÕÒ
+	//å•è¾¹èµ·å§‹é€ç‚¹é€’å½’æŸ¥æ‰¾
 	public static boolean isWin() {
 		if(Chessboard.mutex==0) {
 			for(int n=0;n<11;n++) {
-				boolean[][] searchVisited =new boolean[Chessboard.getSize()][Chessboard.getSize()];//¸¨ÖúÊı×é¼ÇÂ¼ÒÑ·ÃÎÊµã
-				Pos index=new Pos(0,n);//Player1 ·½Ïò²éÕÒ
-				if(endSearch(searchVisited,index))return true;//µ÷ÓÃµİ¹éº¯Êı
+				boolean[][] searchVisited =new boolean[Chessboard.getSize()][Chessboard.getSize()];//è¾…åŠ©æ•°ç»„è®°å½•å·²è®¿é—®ç‚¹
+				Pos index=new Pos(0,n);//Player1 æ–¹å‘æŸ¥æ‰¾
+				if(endSearch(searchVisited,index))return true;//è°ƒç”¨é€’å½’å‡½æ•°
 				else continue;
 			}
 		}
 		else {
 			for(int n=0;n<11;n++) {
 				boolean[][] searchVisited =new boolean[Chessboard.getSize()][Chessboard.getSize()];
-				Pos index=new Pos(n,0);//Player2 ·½Ïò²éÕÒ
+				Pos index=new Pos(n,0);//Player2 æ–¹å‘æŸ¥æ‰¾
 				if(endSearch(searchVisited,index))return true;
 				else continue;
 			}
 		}
 		return false;
 	}
-	//µİ¹é²éÕÒÁ¬Í¨Æå×Ó
+	//é€’å½’æŸ¥æ‰¾è¿é€šæ£‹å­
 	private static boolean endSearch(boolean[][] searchVisited, Pos index) {
-		if(!Chessboard.isSeatTaken[index.getRow()][index.getCol()])return false;//ÊÇ·ñ´æÔÚÓĞĞ§Æå×Ó£¨ÊÇ·ñ´æÔÚÆğÊ¼µã£©
-		Pos[] positions =BesidePawns.besidePos(searchVisited,index);//²éÕÒÖÜÎ§ÓĞĞ§Æå×Ó´æÈë¸¨ÖúÊı×é
-		searchVisited[index.getRow()][index.getCol()]=true;//±ê¼ÇÒÑ²éÕÒ
+		if(!Chessboard.isSeatTaken[index.getRow()][index.getCol()])return false;//æ˜¯å¦å­˜åœ¨æœ‰æ•ˆæ£‹å­ï¼ˆæ˜¯å¦å­˜åœ¨èµ·å§‹ç‚¹ï¼‰
+		Pos[] positions =BesidePawns.besidePos(searchVisited,index);//æŸ¥æ‰¾å‘¨å›´æœ‰æ•ˆæ£‹å­å­˜å…¥è¾…åŠ©æ•°ç»„
+		searchVisited[index.getRow()][index.getCol()]=true;//æ ‡è®°å·²æŸ¥æ‰¾
 		for(int n=0;n<6;n++){
 			if(positions[n]!=null) {
-				if(Chessboard.mutex==0&&positions[n].getRow()==Chessboard.getSize()-1) {//ÊÇ·ñÎªÖÕµã
+				if(Chessboard.mutex==0&&positions[n].getRow()==Chessboard.getSize()-1) {//æ˜¯å¦ä¸ºç»ˆç‚¹
 					System.out.println(Chessboard.mutex+" is won");
 					Winning.setText(ColorMapping.mapToString(Chessboard.mutex)+" Won!");
 					Winning.setColor(ColorMapping.mapColor(Chessboard.mutex));
 					Chessboard.mutex=-1;
 					return true;
 				}
-				else if(Chessboard.mutex==1&&positions[n].getCol()==Chessboard.getSize()-1) {//ÊÇ·ñÎªÖÕµã
+				else if(Chessboard.mutex==1&&positions[n].getCol()==Chessboard.getSize()-1) {//æ˜¯å¦ä¸ºç»ˆç‚¹
 					System.out.println(Chessboard.mutex+" is won");
 					Winning.setText(ColorMapping.mapToString(Chessboard.mutex)+" Won!");
 					Winning.setColor(ColorMapping.mapColor(Chessboard.mutex));
 					Chessboard.mutex=-1;
 					return true;
 				}
-				else if(endSearch(searchVisited,positions[n]))return true;//µİ¹é
+				else if(endSearch(searchVisited,positions[n]))return true;//é€’å½’
 				else continue;
 			}
 		}
